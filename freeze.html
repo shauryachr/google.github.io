@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Matrix Mode</title>
+<style>
+body { margin:0; background:black; }
+canvas { display:block; }
+</style>
+</head>
+
+<body>
+<a href="index.html" style="color:white;position:fixed;z-index:10;">⬅ Back</a>
+<canvas id="c"></canvas>
+
+<script>
+const canvas = document.getElementById("c");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+const letters = "01ABCDEF";
+const size = 14;
+const columns = canvas.width / size;
+const drops = Array(Math.floor(columns)).fill(1);
+
+function draw(){
+ ctx.fillStyle="rgba(0,0,0,0.05)";
+ ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ ctx.fillStyle="#0F0";
+ ctx.font=size+"px monospace";
+
+ drops.forEach((y,i)=>{
+   let text = letters[Math.floor(Math.random()*letters.length)];
+   ctx.fillText(text,i*size,y*size);
+
+   if(y*size > canvas.height && Math.random()>0.975){
+     drops[i]=0;
+   }
+   drops[i]++;
+ });
+}
+
+setInterval(draw,33);
+</script>
+
+</body>
+</html>
