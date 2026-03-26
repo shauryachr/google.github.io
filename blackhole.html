@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Black Hole</title>
+<style>
+body { text-align:center; overflow:hidden; }
+#bh {
+ position:fixed;
+ top:50%; left:50%;
+ width:200px; height:200px;
+ background:black;
+ border-radius:50%;
+ transform:translate(-50%,-50%);
+}
+</style>
+</head>
+
+<body>
+
+<h1>Black Hole Mode</h1>
+<a href="index.html">⬅ Back</a>
+<div id="bh"></div>
+
+<script>
+const elements = document.querySelectorAll("body *:not(#bh)");
+
+elements.forEach(el=>{
+ let x=100, y=100;
+ setInterval(()=>{
+   let cx=window.innerWidth/2;
+   let cy=window.innerHeight/2;
+   x+=(cx-x)*0.05;
+   y+=(cy-y)*0.05;
+   el.style.position="fixed";
+   el.style.left=x+"px";
+   el.style.top=y+"px";
+ },16);
+});
+</script>
+
+</body>
+</html>
