@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Freeze Mode</title>
+<style>
+body {
+ background:#dff6ff;
+ color:#a0c4ff;
+ text-align:center;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Freeze Mode ❄️</h1>
+<a href="index.html">⬅ Back</a>
+
+<script>
+document.querySelectorAll("*").forEach(el=>{
+ el.style.transition="1s";
+ el.style.filter="blur(1px)";
+});
+</script>
+
+</body>
+</html>
