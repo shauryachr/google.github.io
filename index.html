@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Easter Egg Hub</title>
+
+<style>
+body {
+    font-family: Arial;
+    text-align: center;
+    margin-top: 100px;
+}
+
+button {
+    padding: 12px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    background: #eee;
+}
+button:hover {
+    background: #ddd;
+}
+</style>
+</head>
+
+<body>
+
+<h1>Google Easter Eggs Hub</h1>
+
+<button onclick="go('blackhole.html')">Black Hole</button>
+<button onclick="go('magnet.html')">Magnet</button>
+<button onclick="go('wave.html')">Wave</button>
+<button onclick="go('matrix.html')">Matrix</button>
+<button onclick="go('freeze.html')">Freeze</button>
+
+<script>
+function go(page){
+    window.location.href = page;
+}
+</script>
+
+</body>
+</html>
