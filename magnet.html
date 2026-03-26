@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Magnet Mode</title>
+</head>
+
+<body>
+<h1>Magnet Mode</h1>
+<a href="index.html">⬅ Back</a>
+
+<script>
+document.addEventListener("mousemove", e=>{
+ document.querySelectorAll("*").forEach(el=>{
+   let r=el.getBoundingClientRect();
+   let x=r.left + (e.clientX - r.left)*0.05;
+   let y=r.top + (e.clientY - r.top)*0.05;
+
+   el.style.position="fixed";
+   el.style.left=x+"px";
+   el.style.top=y+"px";
+ });
+});
+</script>
+
+</body>
+</html>
